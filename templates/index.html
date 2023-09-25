@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Interface</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include optional Bootstrap theme CSS (replace with your preferred theme if needed) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Include Bootstrap CSS (you can adjust the paths as needed) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-dark-subtle">
+        <a class="navbar-brand" href="{% url 'home' %}">SreeMail</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'inbox' %}">Inbox</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'sentmails' %}">Sent Mails</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'stared' %}">Starred</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'drafts' %}">Drafts</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'trash' %}">Trash</a>
+              </li>
+            
+            
+          </ul>
+          <form class="form-inline my-2 my-lg-0" method="get">
+            <input class="form-control mr-sm-3" type="search" placeholder="Search Mail" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-2" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <!-- navbar -->
+    <marquee onmouseover="stop()" onmouseout="start()">
+        <div class="container-lg pt-2 badge-light m-auto">Developed by Sree...</div>
+    </marquee>
+    <div class="bg-image"></div>
+    <div id="success" class="container mt-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <!-- Compose Button -->
+                <form method="post" action="{% url 'compose' %}">
+                    {% csrf_token %}
+                    <button class="btn btn-primary btn-block mb-3">Compose</button>
+                </form>
+
+
+                <!-- Folder List -->
+                <div class="list-group">
+                    <a href="{% url 'inbox' %}" class="list-group-item list-group-item-action ">
+                        Inbox
+                    </a>
+                    <a href="{% url 'sentmails' %}" class="list-group-item list-group-item-action">Sent Mails</a>
+                    <a href="{% url 'trash' %}" class="list-group-item list-group-item-action">Trash</a>
+                    <a href="{% url 'drafts' %}" class="list-group-item list-group-item-action">Drafts</a>
+                    <a href="{% url 'stared' %}" class="list-group-item list-group-item-action ">Starred</a>
+                </div>
+            </div>
+
+            <!-- Email List -->
+            <div class="col-md-9">
+                <!-- Email Item -->
+                <!-- <h5 class="card-title">Simple mail application</h5> -->
+                <div class="card mb-3">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">Subject of the Email</h5>
+                        <p class="card-text">From: sender@example.com</p>
+                        <p class="card-text">Date: September 6, 2023</p>
+                        <a href="{% url 'inbox' %}" class="btn btn-primary">Read Inbox</a>
+                    </div>
+                </div>
+
+                <!-- Repeat Email Items for the Email List -->
+                <!-- You can use a loop to generate email items dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS (optional, for certain components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
