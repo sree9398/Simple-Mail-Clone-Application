@@ -20,41 +20,46 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-dark-subtle">
-        <a class="navbar-brand" href="{% url 'home' %}">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      <a class="navbar-brand" href="{% url 'home' %}">SreeMail</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'inbox' %}">Inbox</a>
+          </li>
+          <li class="nav-item active">
+              <a class="nav-link" href="{% url 'sentmails' %}">Sent Mails</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'inbox' %}">Inbox</a>
+              <a class="nav-link" href="{% url 'stared' %}">Starred</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'sentmails' %}">Sent Mails</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'stared' %}">Starred</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'drafts' %}">Drafts</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'trash' %}">Trash</a>
-              </li>
-            
-            
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-3" type="search" placeholder="Search Mail" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-2" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
+              <a class="nav-link" href="{% url 'drafts' %}">Drafts</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'trash' %}">Trash</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'logout' %}">LogOut</a>
+            </li>
+          
+          
+        </ul>
+        <form class="form-inline my-2 my-lg-0" method="get">
+          <input class="form-control mr-sm-3" type="search" placeholder="Search Mail" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-2" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  <!-- navbar -->
       <marquee onmouseover="stop()" onmouseout="start()">
         <div class="container-lg pt-2 badge-light m-auto">Developed by Sree...</div>
     </marquee>

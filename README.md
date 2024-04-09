@@ -1,2 +1,0 @@
-# mail
-simple mail clone 

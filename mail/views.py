@@ -10,7 +10,10 @@ from drafts.models import Drafts
 def home(request):
     return render(request,'index.html',{})
 
-
+def login(request):
+    return render(request,'/',{})
+def logout(request):
+    return render(request,'logout.html',{})
 
 
 
@@ -183,7 +186,7 @@ from django.shortcuts import render  # Import the render function from Django
 def get_inbox_emails(request):
     # Connect to the IMAP server
     imap_server = imaplib.IMAP4_SSL('imap.gmail.com')  # Replace with your IMAP server address
-    imap_server.login('cseaiml65@gmail.com', 'llydkizlqkfyqulv')  # Replace with your email credentials
+    imap_server.login('cseaiml65@gmail.com', 'wcjyayrkhvbulwvo')  # Replace with your email credentials
 
     # Select the inbox folder
     imap_server.select('INBOX')

@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'sent',
     'trash',
     'drafts',
-    'starred'
+    'starred',
+   
     
 ]
 
@@ -145,6 +146,6 @@ EMAIL_HOST= 'smtp.gmail.com'
 EMAIL_PORT=587  # For starttls
 EMAIL_USE_TLS=True   # For tls
 EMAIL_HOST_USER= 'cseaiml65@gmail.com'    ## Enter your email id here
-EMAIL_HOST_PASSWORD= 'llydkizlqkfyqulv'     ###Enter the password of that email account
+EMAIL_HOST_PASSWORD= 'wcjyayrkhvbulwvo'     ###Enter the password of that email account
 
 
